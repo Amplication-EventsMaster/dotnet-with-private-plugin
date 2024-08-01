@@ -29,9 +29,6 @@ builder.Services.AddCors(builder =>
         }
     );
 });
-builder.Services.AddDbContext<DotNetWithPrivatePluginDbContext>(opt =>
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
 builder.Services.AddApiAuthentication();
 builder.Services.AddDbContext<DotNetWithPrivatePluginDbContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
